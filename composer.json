@@ -1,0 +1,12 @@
+{
+    "name": "mehdi/dvwa",
+    "authors": [
+        {
+            "name": "Mehdi",
+            "email": "mehdi@mehdi-aberkane.fr"
+        }
+    ],
+    "require": {
+        "phpmd/phpmd" : "@stable"
+    }
+}

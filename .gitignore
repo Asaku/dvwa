@@ -1,0 +1,4 @@
+config/config.inc.php
+/vendor/
+.idea/
+.DS_STORE
