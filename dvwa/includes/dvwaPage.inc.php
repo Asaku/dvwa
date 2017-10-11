@@ -23,12 +23,12 @@ if( !isset( $html ) ) {
 // Valid security levels
 $security_levels = array('low', 'medium', 'high', 'impossible');
 if( !isset( $_COOKIE[ 'security' ] ) || !in_array( $_COOKIE[ 'security' ], $security_levels ) ) {
-	// Set security cookie to impossible if no cookie exists
+	// Set security cookie to low if no cookie exists
 	if( in_array( $_DVWA[ 'default_security_level' ], $security_levels) ) {
 		dvwaSecurityLevelSet( $_DVWA[ 'default_security_level' ] );
 	}
 	else {
-		dvwaSecurityLevelSet( 'impossible' );
+		dvwaSecurityLevelSet( 'low' );
 	}
 
 	if( $_DVWA[ 'default_phpids_level' ] == 'enabled' )
@@ -208,6 +208,7 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_d', 'name' => 'XSS (DOM)', 'url' => 'vulnerabilities/xss_d/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'massive_assignement', 'name' => 'Massive Assignement', 'url' => 'vulnerabilities/massive_assignement/' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
@@ -284,6 +285,8 @@ function dvwaHtmlEcho( $pPage ) {
 		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />
 
 		<title>{$pPage[ 'title' ]}</title>
+
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/bootstrap/bootstrap.min.css\" />
 
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
 

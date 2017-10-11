@@ -57,6 +57,9 @@ switch ($id) {
 	case "weak_id" :
 		$vuln = 'Weak Session IDs';
 		break;
+	case "massive assignment" :
+		$vuln = 'massive assignment';
+		break;
 	default:
 		$vuln = "Unknown Vulnerability";
 }
