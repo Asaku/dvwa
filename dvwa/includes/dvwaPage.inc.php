@@ -286,7 +286,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/bootstrap/bootstrap.min.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/bootstrap/css/bootstrap.min.css\" />
 
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
 
