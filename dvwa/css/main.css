@@ -264,3 +264,7 @@ span.failure {
 	color:red;
 	font-weight: bold;
 }
+
+.info {
+	margin-bottom: 20px;
+}

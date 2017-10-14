@@ -68,9 +68,9 @@ else {
 		$page[ 'body' ] .= "</select>";
 	}
 	else
-		$page[ 'body' ] .= "\n				<input type=\"text\" size=\"15\" name=\"id\">";
-
-	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Submit\">
+		$page[ 'body' ] .= "\n				<input type=\"text\" size=\"15\" class=\"form-control\" name=\"id\">";
+		$page[ 'body' ] .= "<div class='clearfix'></div>";
+		$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" class=\"btn btn-primary text-right\" value=\"Submit\">
 			</p>\n";
 
 	if( $vulnerabilityFile == 'impossible.php' )

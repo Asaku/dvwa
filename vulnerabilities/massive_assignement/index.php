@@ -1,5 +1,16 @@
 <?php
 
+function field($label, $name, $type)
+{
+	return "
+		<div class='form-group'>
+			<label>".$label."</label>
+			<input type=".$type." class='form-control' name=".$name.">
+		</div>
+	";
+}
+
+
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
@@ -36,18 +47,19 @@ switch( $_COOKIE[ 'security' ] ) {
 require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/massive_assignement/source/{$vulnerabilityFile}";
 
 $page[ 'body' ] .= "
-<div class=\"body_padded\">
+<div class=\"body_padded\" class='col-md-6'>
 	<h1>Vulnerability: Massive Assignement</h1>
 
 	<div class=\"vulnerable_code_area\">";
 
 	$page[ 'body' ] .= "
-		<form action=\"#\" method=\"{$method}\">
+		<form action=\"#\" method=\"{$method}\" >
 			<p>
 				User ID:";
-		$page[ 'body' ] .= "\n				<input type=\"text\" size=\"15\" name=\"id\">";
+	$page[ 'body' ] .= field("First Name", "first_name", "text");
+	$page[ 'body' ] .= field("Last Name", "last_name", "text");
 
-	$page[ 'body' ] .= "\n				<input type=\"submit\" name=\"Submit\" value=\"Submit\">
+	$page[ 'body' ] .= "\n				<input type=\"submit\" class='btn btn-primary' name=\"Submit\" value=\"Submit\">
 			</p>\n";
 
 	$page[ 'body' ] .= "
@@ -57,6 +69,27 @@ $page[ 'body' ] .= "
 			{$html}
 		</div>
 
+
+	</div>\n";
+
+$admin = 'false';
+
+if ($_SESSION['user']['super_admin'] == 1)
+	$admin = 'true';
+
+$page[ 'body' ] .= 
+"<div>
+		<div class='info'>
+			<div>
+				<div> First Name: ".$_SESSION['user']['first_name']."</div>
+			</div>
+			<div>
+				<div> Last Name: ".$_SESSION['user']['last_name']."</div>
+			</div>
+			<div>
+				<div> Super Admin: ". $admin . "</div>
+			</div>
+		</div>
 		<h2>More Information</h2>
 		<ul>
 			<li>" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>
@@ -66,8 +99,7 @@ $page[ 'body' ] .= "
 			<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/SQL_Injection' ) . "</li>
 			<li>" . dvwaExternalLinkUrlGet( 'http://bobby-tables.com/' ) . "</li>
 		</ul>
-	</div>\n";
-
+</div>";
 dvwaHtmlEcho( $page );
 
 ?>
