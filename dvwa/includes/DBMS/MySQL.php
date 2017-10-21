@@ -33,7 +33,7 @@ if( !@((bool)mysqli_query($GLOBALS["___mysqli_ston"], "USE " . $_DVWA[ 'db_datab
 	dvwaPageReload();
 }
 
-$create_tb = "CREATE TABLE users (user_id int(6),first_name varchar(15),last_name varchar(15), user varchar(15), password varchar(32),avatar varchar(70), last_login TIMESTAMP, failed_login INT(3), PRIMARY KEY (user_id));";
+$create_tb = "CREATE TABLE users (user_id int(6),first_name varchar(15),last_name varchar(15), user varchar(15), password varchar(32),avatar varchar(70), last_login TIMESTAMP, failed_login INT(3), super_admin bool, PRIMARY KEY (user_id));";
 if( !mysqli_query($GLOBALS["___mysqli_ston"],  $create_tb ) ) {
 	dvwaMessagePush( "Table could not be created<br />SQL: " . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) );
 	dvwaPageReload();
@@ -48,11 +48,11 @@ $stripPos = strpos( $baseUrl, 'setup.php' );
 $baseUrl  = substr( $baseUrl, 0, $stripPos ) . 'hackable/users/';
 
 $insert = "INSERT INTO users VALUES
-	('1','admin','admin','admin',MD5('password'),'{$baseUrl}admin.jpg', NOW(), '0'),
-	('2','Gordon','Brown','gordonb',MD5('abc123'),'{$baseUrl}gordonb.jpg', NOW(), '0'),
-	('3','Hack','Me','1337',MD5('charley'),'{$baseUrl}1337.jpg', NOW(), '0'),
-	('4','Pablo','Picasso','pablo',MD5('letmein'),'{$baseUrl}pablo.jpg', NOW(), '0'),
-	('5','Bob','Smith','smithy',MD5('password'),'{$baseUrl}smithy.jpg', NOW(), '0');";
+	('1','admin','admin','admin',MD5('password'),'{$baseUrl}admin.jpg', NOW(), '0', '0'),
+	('2','Gordon','Brown','gordonb',MD5('abc123'),'{$baseUrl}gordonb.jpg', NOW(), '0', '0'),
+	('3','Hack','Me','1337',MD5('charley'),'{$baseUrl}1337.jpg', NOW(), '0', '0'),
+	('4','Pablo','Picasso','pablo',MD5('letmein'),'{$baseUrl}pablo.jpg', NOW(), '0', '0'),
+	('5','Bob','Smith','smithy',MD5('password'),'{$baseUrl}smithy.jpg', NOW(), '0', '0');";
 if( !mysqli_query($GLOBALS["___mysqli_ston"],  $insert ) ) {
 	dvwaMessagePush( "Data could not be inserted into 'users' table<br />SQL: " . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) );
 	dvwaPageReload();

@@ -93,6 +93,7 @@ function dvwaPhpIdsIsEnabled() {
 function dvwaLogin( $pUsername ) {
 	$dvwaSession =& dvwaSessionGrab();
 	$dvwaSession[ 'username' ] = $pUsername;
+	
 }
 
 
@@ -115,6 +116,14 @@ function dvwaPageReload() {
 function dvwaCurrentUser() {
 	$dvwaSession =& dvwaSessionGrab();
 	return ( isset( $dvwaSession[ 'username' ]) ? $dvwaSession[ 'username' ] : '') ;
+}
+
+function updateUserSession() {
+	$query  = "SELECT * FROM `users` WHERE user='".dvwaCurrentUser()."';";
+	$result = @mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '.<br />Try <a href="setup.php">installing again</a>.</pre>' );
+
+	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+	$_SESSION['user'] = $row;
 }
 
 // -- END (Session functions)
@@ -286,7 +295,7 @@ function dvwaHtmlEcho( $pPage ) {
 
 		<title>{$pPage[ 'title' ]}</title>
 
-		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/bootstrap/bootstrap.min.css\" />
+		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/bootstrap/css/bootstrap.min.css\" />
 
 		<link rel=\"stylesheet\" type=\"text/css\" href=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/css/main.css\" />
 
