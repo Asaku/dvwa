@@ -59,7 +59,7 @@ $baseUrl = substr( $baseUrl, 0, $stripPos ).'dvwa/hackable/users/';
 
 $insert = "INSERT INTO users VALUES
 	('1','admin','admin','admin',MD5('password'),'{$baseUrl}admin.jpg'),
-	('2','Gordon','Brown','gordonb',MD5('abc123'),'{$baseUrl}gordonb.jpg'),
+	('2','Gordon','Brown','gordonb',MD5('fgh'),'{$baseUrl}gordonb.jpg'),
 	('3','Hack','Me','1337',MD5('charley'),'{$baseUrl}1337.jpg'),
 	('4','Pablo','Picasso','pablo',MD5('letmein'),'{$baseUrl}pablo.jpg'),
 	('5','bob','smith','smithy',MD5('password'),'{$baseUrl}smithy.jpg');";

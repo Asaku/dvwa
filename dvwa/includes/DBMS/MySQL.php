@@ -49,7 +49,7 @@ $baseUrl  = substr( $baseUrl, 0, $stripPos ) . 'hackable/users/';
 
 $insert = "INSERT INTO users VALUES
 	('1','admin','admin','admin',MD5('password'),'{$baseUrl}admin.jpg', NOW(), '0', '0'),
-	('2','Gordon','Brown','gordonb',MD5('abc123'),'{$baseUrl}gordonb.jpg', NOW(), '0', '0'),
+	('2','Gordon','Brown','gordonb',MD5('fgh'),'{$baseUrl}gordonb.jpg', NOW(), '0', '0'),
 	('3','Hack','Me','1337',MD5('charley'),'{$baseUrl}1337.jpg', NOW(), '0', '0'),
 	('4','Pablo','Picasso','pablo',MD5('letmein'),'{$baseUrl}pablo.jpg', NOW(), '0', '0'),
 	('5','Bob','Smith','smithy',MD5('password'),'{$baseUrl}smithy.jpg', NOW(), '0', '0');";
