@@ -53,43 +53,22 @@ $page[ 'body' ] .= "
 	<div class=\"vulnerable_code_area\">";
 
 	$page[ 'body' ] .= "
-		<form action=\"#\" method=\"{$method}\" >
-			<p>
-				User ID:";
-	$page[ 'body' ] .= field("First Name", "first_name", "text");
-	$page[ 'body' ] .= field("Last Name", "last_name", "text");
+		<form action=\"#\" method=\"{$method}\">";
+	$page[ 'body' ] .= field("Link", "link", "text");
 
-	$page[ 'body' ] .= "\n				<input type=\"submit\" class='btn btn-primary' name=\"Submit\" value=\"Submit\">
-			</p>\n";
+	$page[ 'body' ] .= "\n<a href=\"#\" class='btn btn-primary' onclick='addLink()'>Submit</a>
+			";
 
 	$page[ 'body' ] .= "
 		</form>";
 
-	$page[ 'body' ] .= "
+	$page[ 'body' ] .= "<a href='#' class='text-right' target='blank'>Target</a>
 			{$html}
 		</div>
-
-
 	</div>\n";
-
-$admin = 'false';
-
-if ($_SESSION['user']['super_admin'] == 1)
-	$admin = 'true';
 
 $page[ 'body' ] .= 
 "<div>
-		<div class='info'>
-			<div>
-				<div> First Name: ".$_SESSION['user']['first_name']."</div>
-			</div>
-			<div>
-				<div> Last Name: ".$_SESSION['user']['last_name']."</div>
-			</div>
-			<div>
-				<div> Super Admin: ". $admin . "</div>
-			</div>
-		</div>
 		<h2>More Information</h2>
 		<ul>
 			<li>" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>

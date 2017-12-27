@@ -33,3 +33,7 @@ with (thisform) {
   }
 }
 
+//Targe Blank
+function addLink() {
+  console.log('addLink');
+}
