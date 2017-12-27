@@ -268,3 +268,15 @@ span.failure {
 .info {
 	margin-bottom: 20px;
 }
+
+.target {
+	text-align: right;
+	font-size: 25px;
+}
+
+.target a {
+	font-size: 25px;
+	color: red;
+	text-decoration: none;
+	display: none;
+}

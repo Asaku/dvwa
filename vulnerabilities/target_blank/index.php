@@ -56,13 +56,15 @@ $page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">";
 	$page[ 'body' ] .= field("Link", "link", "text");
 
-	$page[ 'body' ] .= "\n<a href=\"#\" class='btn btn-primary' onclick='addLink()'>Submit</a>
+	$page[ 'body' ] .= "<a href=\"#\" class='btn btn-primary' onclick='addLink()'>Submit</a>
 			";
+
+	$page['body'] .= "<div class='target'><a href='#' class='text-right' target='blank'>Target</a></div>";
 
 	$page[ 'body' ] .= "
 		</form>";
 
-	$page[ 'body' ] .= "<a href='#' class='text-right' target='blank'>Target</a>
+	$page[ 'body' ] .= "
 			{$html}
 		</div>
 	</div>\n";
