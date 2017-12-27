@@ -17,7 +17,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: Massive Assignement' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Vulnerability: Target Blank' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'target_blank';
 $page[ 'help_button' ]   = 'target_blank';
 $page[ 'source_button' ] = 'target_blank';

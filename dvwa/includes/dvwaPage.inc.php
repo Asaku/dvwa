@@ -218,6 +218,7 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_r', 'name' => 'XSS (Reflected)', 'url' => 'vulnerabilities/xss_r/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xss_s', 'name' => 'XSS (Stored)', 'url' => 'vulnerabilities/xss_s/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'massive_assignement', 'name' => 'Massive Assignement', 'url' => 'vulnerabilities/massive_assignement/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'target_blank', 'name' => 'Target Blank', 'url' => 'vulnerabilities/target_blank/' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
