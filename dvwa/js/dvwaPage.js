@@ -37,7 +37,6 @@ with (thisform) {
 function addLink() {
   var target = document.getElementById("target_blank");
   var url = document.getElementById("target_url");
-  console.log(url);
   target.style.display = "block";
   target.firstChild.href = url.value;
 }

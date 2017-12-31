@@ -72,12 +72,9 @@ $page[ 'body' ] .=
 "<div>
 		<h2>More Information</h2>
 		<ul>
-			<li>" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/SQL_injection' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/SQL_Injection' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://bobby-tables.com/' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://davidebove.com/blog/2016/05/05/target_blank-the-vulnerability-in-your-browser/' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://www.w3schools.com/tags/att_a_target.asp' ) . "</li>
 		</ul>
 </div>";
 dvwaHtmlEcho( $page );
