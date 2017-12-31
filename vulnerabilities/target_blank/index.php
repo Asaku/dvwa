@@ -1,15 +1,14 @@
 <?php
 
-function field($label, $name, $type)
+function field($label, $name, $type, $id = null)
 {
 	return "
 		<div class='form-group'>
 			<label>".$label."</label>
-			<input type=".$type." class='form-control' name=".$name.">
+			<input type=".$type." class='form-control' name=".$name." id=".$id.">
 		</div>
 	";
 }
-
 
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
@@ -54,12 +53,12 @@ $page[ 'body' ] .= "
 
 	$page[ 'body' ] .= "
 		<form action=\"#\" method=\"{$method}\">";
-	$page[ 'body' ] .= field("Link", "link", "text");
+	$page[ 'body' ] .= field("Link", "link", "text", "target_url");
 
 	$page[ 'body' ] .= "<a href=\"#\" class='btn btn-primary' onclick='addLink()'>Submit</a>
 			";
 
-	$page['body'] .= "<div class='target'><a href='#' class='text-right' target='blank'>Target</a></div>";
+	$page['body'] .= "<div id='target_blank'><a href='#' class='text-right' target='blank'>Target</a></div>";
 
 	$page[ 'body' ] .= "
 		</form>";

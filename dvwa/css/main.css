@@ -269,14 +269,14 @@ span.failure {
 	margin-bottom: 20px;
 }
 
-.target {
+#target_blank {
 	text-align: right;
 	font-size: 25px;
+	display: none;
 }
 
-.target a {
+#target_blank a {
 	font-size: 25px;
 	color: red;
 	text-decoration: none;
-	display: none;
 }

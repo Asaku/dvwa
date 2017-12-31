@@ -35,5 +35,9 @@ with (thisform) {
 
 //Targe Blank
 function addLink() {
-  document.getElementsByClassName("target").style.display = "block"
+  var target = document.getElementById("target_blank");
+  var url = document.getElementById("target_url");
+  console.log(url);
+  target.style.display = "block";
+  target.firstChild.href = url.value;
 }

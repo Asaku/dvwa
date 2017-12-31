@@ -341,13 +341,9 @@ function dvwaHtmlEcho( $pPage ) {
 			<div id=\"footer\">
 
 				<p>Damn Vulnerable Web Application (DVWA) v" . dvwaVersionGet() . "</p>
-
 			</div>
-
 		</div>
-
 	</body>
-
 </html>";
 }
 
