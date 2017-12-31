@@ -92,12 +92,10 @@ $page[ 'body' ] .=
 		</div>
 		<h2>More Information</h2>
 		<ul>
-			<li>" . dvwaExternalLinkUrlGet( 'http://www.securiteam.com/securityreviews/5DP0N1P76E.html' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/SQL_injection' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://ferruh.mavituna.com/sql-injection-cheatsheet-oku/' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/SQL_Injection' ) . "</li>
-			<li>" . dvwaExternalLinkUrlGet( 'http://bobby-tables.com/' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Mass_Assignment_Cheat_Sheet' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/Mass_assignment_vulnerability' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'http://www.yiiframework.com/wiki/161/understanding-safe-validation-rules/' ) . "</li>
+			<li>" . dvwaExternalLinkUrlGet( 'https://laracasts.com/discuss/channels/general-discussion/model-mass-assignment' ) . "</li>
 		</ul>
 </div>";
 dvwaHtmlEcho( $page );
