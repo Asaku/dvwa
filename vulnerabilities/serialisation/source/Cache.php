@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Class Cache
+ */
+class Cache
+{
+    public $cache_file;
+
+    public function __construct($data)
+    {
+        $this->cache_file = $data;
+        file_put_contents("cache/".$data, $data, FILE_APPEND);
+    }
+
+    public function __destruct()
+    {
+        $file = "cache/{$this->cache_file}";
+        if (file_exists($file)) @unlink($file);
+    }
+}

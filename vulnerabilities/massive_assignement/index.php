@@ -26,23 +26,6 @@ dvwaDatabaseConnect();
 
 $method            = 'GET';
 $vulnerabilityFile = 'low.php';
-/*
-switch( $_COOKIE[ 'security' ] ) {
-	case 'low':
-		$vulnerabilityFile = 'low.php';
-		break;
-	case 'medium':
-		$vulnerabilityFile = 'medium.php';
-		$method = 'POST';
-		break;
-	case 'high':
-		$vulnerabilityFile = 'high.php';
-		break;
-	default:
-		$vulnerabilityFile = 'impossible.php';
-		break;
-}
-*/
 
 require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/massive_assignement/source/{$vulnerabilityFile}";
 
@@ -68,8 +51,6 @@ $page[ 'body' ] .= "
 	$page[ 'body' ] .= "
 			{$html}
 		</div>
-
-
 	</div>\n";
 
 $admin = 'false';

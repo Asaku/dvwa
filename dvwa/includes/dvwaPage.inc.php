@@ -220,6 +220,7 @@ function dvwaHtmlEcho( $pPage ) {
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'massive_assignement', 'name' => 'Massive Assignement', 'url' => 'vulnerabilities/massive_assignement/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'target_blank', 'name' => 'Target Blank', 'url' => 'vulnerabilities/target_blank/' );
 		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'xxe', 'name' => 'XXE', 'url' => 'vulnerabilities/xxe/' );
+		$menuBlocks[ 'vulnerabilities' ][] = array( 'id' => 'serialisation', 'name' => 'Serialisation', 'url' => 'vulnerabilities/serialisation/' );
 	}
 
 	$menuBlocks[ 'meta' ] = array();
