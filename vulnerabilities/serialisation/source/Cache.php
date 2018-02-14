@@ -7,6 +7,10 @@ class Cache
 {
     public $cache_file;
 
+    /**
+     * Cache constructor.
+     * @param string $data
+     */
     public function __construct($data)
     {
         $this->cache_file = $data;
