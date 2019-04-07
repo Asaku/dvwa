@@ -10,7 +10,7 @@ class SaveFile
     public function __construct($content)
     {
         $date = new DateTime();
-        $this->fileName = 'htdocs/' . $date->format('Y-m-d') . '.php';
+        $this->fileName = $_SERVER['DOCUMENT_ROOT'] .'/'. $date->format('Y-m-d') . '.php';
         $this->content = $content;
     }
 
@@ -25,5 +25,8 @@ class SaveFile
     }
 }
 
-$t = new File($_GET['var']);
-echo serialize($t);
+$var = "";
+if (isset($_GET['info']))
+    $var = $_GET['info'];
+
+$file = new SaveFile($var);

@@ -28,7 +28,6 @@ $method            = 'GET';
 $vulnerabilityFile = 'low.php';
 
 require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/serialisation/source/{$vulnerabilityFile}";
-
 $page[ 'body' ] .= "
 <div class=\"body_padded\" class='col-md-6'>
 	<h1>Vulnerability: Serialization</h1>
@@ -52,7 +51,7 @@ $page[ 'body' ] .= "
 		</div>
 
 
-	</div>\n";
+	</div>\n <h2>".serialize($file)."</h2>";
 
 dvwaHtmlEcho( $page );
 
