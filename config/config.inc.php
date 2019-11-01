@@ -17,8 +17,8 @@ $DBMS = 'MySQL';
 $_DVWA = array();
 $_DVWA[ 'db_server' ]   = '127.0.0.1';
 $_DVWA[ 'db_database' ] = 'dvwa';
-$_DVWA[ 'db_user' ]     = 'root';
-$_DVWA[ 'db_password' ] = null;
+$_DVWA[ 'db_user' ]     = 'dvwa';
+$_DVWA[ 'db_password' ] = 'dvwa';
 
 # Only used with PostgreSQL/PGSQL database selection.
 $_DVWA[ 'db_port '] = '5432';
