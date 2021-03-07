@@ -16,9 +16,9 @@ $DBMS = 'MySQL';
 #   See README.md for more information on this.
 $_DVWA = array();
 $_DVWA[ 'db_server' ]   = '127.0.0.1';
-$_DVWA[ 'db_database' ] = 'dvwa2';
-$_DVWA[ 'db_user' ]     = 'root';
-$_DVWA[ 'db_password' ] = 'root';
+$_DVWA[ 'db_database' ] = 'dvwa';
+$_DVWA[ 'db_user' ]     = 'dvwa';
+$_DVWA[ 'db_password' ] = 'dvwa';
 $_DVWA[ 'db_port'] = '3306';
 
 # ReCAPTCHA settings
