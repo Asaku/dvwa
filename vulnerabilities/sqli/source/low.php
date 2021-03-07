@@ -19,7 +19,6 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 	}
 
 	mysqli_close($GLOBALS["___mysqli_ston"]);
-
 }
 
 ?>

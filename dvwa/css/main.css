@@ -264,19 +264,3 @@ span.failure {
 	color:red;
 	font-weight: bold;
 }
-
-.info {
-	margin-bottom: 20px;
-}
-
-#target_blank {
-	text-align: right;
-	font-size: 25px;
-	display: none;
-}
-
-#target_blank a {
-	font-size: 25px;
-	color: red;
-	text-decoration: none;
-}

@@ -9,7 +9,13 @@ dvwaDatabaseConnect();
 
 if( isset( $_POST[ 'Login' ] ) ) {
 	// Anti-CSRF
-	//checkToken( $_REQUEST[ 'user_token' ], $_SESSION[ 'session_token' ], 'login.php' );
+	if (array_key_exists ("session_token", $_SESSION)) {
+		$session_token = $_SESSION[ 'session_token' ];
+	} else {
+		$session_token = "";
+	}
+
+	checkToken( $_REQUEST[ 'user_token' ], $session_token, 'login.php' );
 
 	$user = $_POST[ 'username' ];
 	$user = stripslashes( $user );
@@ -33,7 +39,6 @@ if( isset( $_POST[ 'Login' ] ) ) {
 	$query  = "SELECT * FROM `users` WHERE user='$user' AND password='$pass';";
 	$result = @mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '.<br />Try <a href="setup.php">installing again</a>.</pre>' );
 	if( $result && mysqli_num_rows( $result ) == 1 ) {    // Login Successful...
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		$_SESSION['user'] = $row;
 		dvwaMessagePush( "You have logged in as '{$user}'" );
 		dvwaLogin( $user );
@@ -54,10 +59,9 @@ Header( 'Expires: Tue, 23 Jun 2009 12:00:00 GMT' );     // Date in the past
 // Anti-CSRF
 generateSessionToken();
 
-echo "
-<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+echo "<!DOCTYPE html>
 
-<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<html lang=\"en-GB\">
 
 	<head>
 
@@ -122,7 +126,7 @@ echo "
 
 	<div id=\"footer\">
 
-	<p>" . dvwaExternalLinkUrlGet( 'http://www.dvwa.co.uk/', 'Damn Vulnerable Web Application (DVWA)' ) . "</p>
+	<p>" . dvwaExternalLinkUrlGet( 'https://github.com/digininja/DVWA/', 'Damn Vulnerable Web Application (DVWA)' ) . "</p>
 
 	</div> <!--<div id=\"footer\"> -->
 

@@ -13,6 +13,11 @@ $page[ 'source_button' ] = 'xss_s';
 
 dvwaDatabaseConnect();
 
+if (array_key_exists ("btnClear", $_POST)) {
+	$query  = "TRUNCATE guestbook;";
+	$result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die( '<pre>' . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . '</pre>' );
+}
+
 $vulnerabilityFile = '';
 switch( $_COOKIE[ 'security' ] ) {
 	case 'low':
@@ -36,7 +41,7 @@ $page[ 'body' ] .= "
 	<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>
 
 	<div class=\"vulnerable_code_area\">
-		<form method=\"post\" name=\"guestform\" onsubmit=\"return validate_form(this)\">
+		<form method=\"post\" name=\"guestform\" \">
 			<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">
 				<tr>
 					<td width=\"100\">Name *</td>
@@ -48,7 +53,10 @@ $page[ 'body' ] .= "
 				</tr>
 				<tr>
 					<td width=\"100\">&nbsp;</td>
-					<td><input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onClick=\"return checkForm();\"></td>
+					<td>
+						<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
+						<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />
+					</td>
 				</tr>
 			</table>\n";
 
@@ -66,8 +74,8 @@ $page[ 'body' ] .= "
 
 	<h2>More Information</h2>
 	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet' ) . "</li>
+		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss' ) . "</li>
+		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/xss-filter-evasion-cheatsheet' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/Cross-site_scripting' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'http://www.cgisecurity.com/xss-faq.html' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'http://www.scriptalert1.com/' ) . "</li>
