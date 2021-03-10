@@ -37,3 +37,11 @@ with (thisform) {
 function confirmClearGuestbook() {
 	return confirm("Are you sure you want to clear the guestbook?");
 }
+
+//Targe Blank
+function addLink() {
+  var target = document.getElementById("target_blank");
+  var url = document.getElementById("target_url");
+  target.style.display = "block";
+  target.firstChild.href = url.value;
+}
