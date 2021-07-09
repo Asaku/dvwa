@@ -10,3 +10,7 @@ Dockerfile
 
 # VS Code editor files
 *.code-workspace
+
+# Others
+*.DS_Store*
+.idea
